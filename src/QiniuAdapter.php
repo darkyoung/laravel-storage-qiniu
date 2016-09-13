@@ -1,4 +1,4 @@
-<?php namespace itbdw\QiniuStorage;
+<?php namespace wyzhcn\QiniuStorage;
 
 use League\Flysystem\Adapter\AbstractAdapter;
 use League\Flysystem\Adapter\Polyfill\NotSupportingVisibilityTrait;
@@ -15,7 +15,7 @@ use Qiniu\Storage\UploadManager;
 
 /**
  * Class QiniuAdapter
- * @package itbdw\QiniuStorage
+ * @package wyzhcn\QiniuStorage
  */
 class QiniuAdapter extends AbstractAdapter
 {
@@ -32,13 +32,18 @@ class QiniuAdapter extends AbstractAdapter
     private $bucket_manager = null;
     private $operation = null;
 
-    public function __construct($access_key, $secret_key, $bucket, $domain)
+    public function __construct($access_key, $secret_key, $bucket, $domain, $secure_domain = false)
     {
         $this->access_key = $access_key;
         $this->secret_key = $secret_key;
         $this->bucket = $bucket;
         $this->domain = $domain;
-        $this->setPathPrefix('http://' . $this->domain);
+        if ($secure_domain) {
+            $schema = 'https://';
+        } else {
+            $schema = 'http://';
+        }
+        $this->setPathPrefix($schema . $this->domain);
     }
 
     private function getAuth()

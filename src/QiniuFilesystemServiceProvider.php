@@ -1,21 +1,21 @@
-<?php namespace itbdw\QiniuStorage;
+<?php namespace wyzhcn\QiniuStorage;
 
 use League\Flysystem\Filesystem;
 use Illuminate\Support\ServiceProvider;
-use itbdw\QiniuStorage\Plugins\DownloadUrl;
-use itbdw\QiniuStorage\Plugins\ImageExif;
-use itbdw\QiniuStorage\Plugins\ImageInfo;
-use itbdw\QiniuStorage\Plugins\ImagePreviewUrl;
-use itbdw\QiniuStorage\Plugins\PersistentFop;
-use itbdw\QiniuStorage\Plugins\PersistentStatus;
-use itbdw\QiniuStorage\Plugins\PrivateDownloadUrl;
-use itbdw\QiniuStorage\Plugins\UploadToken;
-use itbdw\QiniuStorage\Plugins\Fetch;
-use itbdw\QiniuStorage\Plugins\PutFile;
+use wyzhcn\QiniuStorage\Plugins\DownloadUrl;
+use wyzhcn\QiniuStorage\Plugins\ImageExif;
+use wyzhcn\QiniuStorage\Plugins\ImageInfo;
+use wyzhcn\QiniuStorage\Plugins\ImagePreviewUrl;
+use wyzhcn\QiniuStorage\Plugins\PersistentFop;
+use wyzhcn\QiniuStorage\Plugins\PersistentStatus;
+use wyzhcn\QiniuStorage\Plugins\PrivateDownloadUrl;
+use wyzhcn\QiniuStorage\Plugins\UploadToken;
+use wyzhcn\QiniuStorage\Plugins\Fetch;
+use wyzhcn\QiniuStorage\Plugins\PutFile;
 
 /**
  * Class QiniuFilesystemServiceProvider
- * @package itbdw\QiniuStorage
+ * @package wyzhcn\QiniuStorage
  */
 class QiniuFilesystemServiceProvider extends ServiceProvider
 {
@@ -29,7 +29,8 @@ class QiniuFilesystemServiceProvider extends ServiceProvider
                     $config['access_key'],
                     $config['secret_key'],
                     $config['bucket'],
-                    $config['domain']
+                    $config['domain'],
+                    $config['secure']
                 );
                 $file_system = new Filesystem($qiniu_adapter);
                 $file_system->addPlugin(new PrivateDownloadUrl());

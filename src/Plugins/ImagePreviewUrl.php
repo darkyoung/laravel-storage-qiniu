@@ -6,7 +6,7 @@
  * Time: 16:42
  */
 
-namespace itbdw\QiniuStorage\Plugins;
+namespace wyzhcn\QiniuStorage\Plugins;
 
 use League\Flysystem\Plugin\AbstractPlugin;
 
@@ -16,7 +16,7 @@ use League\Flysystem\Plugin\AbstractPlugin;
  * $disk        = \Storage::disk('qiniu'); <br>
  * $re          = $disk->getDriver()->imagePreviewUrl('foo/bar1.css',$ops); <br>
  *
- * @package itbdw\QiniuStorage\Plugins
+ * @package wyzhcn\QiniuStorage\Plugins
  */
 class ImagePreviewUrl extends AbstractPlugin
 {

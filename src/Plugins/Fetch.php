@@ -1,6 +1,6 @@
 <?php
 
-namespace itbdw\QiniuStorage\Plugins;
+namespace wyzhcn\QiniuStorage\Plugins;
 
 use League\Flysystem\Plugin\AbstractPlugin;
 

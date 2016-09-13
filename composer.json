@@ -1,5 +1,5 @@
 {
-  "name": "itbdw/laravel-storage-qiniu",
+  "name": "wyzhcn/laravel-storage-qiniu",
   "type": "library",
   "description": "A storage library for laravel5 and qiniu sdk",
   "keywords": [
@@ -28,6 +28,12 @@
       "email": "popfeng@yeah.net",
       "role": "Developer",
       "homepage": "http://github.com/popfeng"
+    },
+    {
+      "name": "wyzhcn",
+      "email": "itbudaoweng@gmail.com",
+      "role": "Developer",
+      "homepage": "http://github.com/wyzhcn"
     }
   ],
   "require": {
@@ -36,7 +42,7 @@
   },
   "autoload": {
     "psr-4": {
-      "itbdw\\QiniuStorage\\": "src/"
+      "wyzhcn\\QiniuStorage\\": "src/"
     }
   }
 }

@@ -1,8 +1,8 @@
-<?php namespace itbdw\QiniuStorage;
+<?php namespace wyzhcn\QiniuStorage;
 
 /**
  * Class QiniuStorage
- * @package itbdw\QiniuStorage
+ * @package wyzhcn\QiniuStorage
  */
 class QiniuStorage
 {

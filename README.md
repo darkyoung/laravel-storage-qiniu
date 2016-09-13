@@ -10,8 +10,8 @@
 
 ## 安装
 
- - ```composer require itbdw/laravel-storage-qiniu```
- - ```config/app.php``` 里面的 ```providers``` 数组， 加上一行 ```itbdw\QiniuStorage\QiniuFilesystemServiceProvider```
+ - ```composer require wyzhcn/laravel-storage-qiniu```
+ - ```config/app.php``` 里面的 ```providers``` 数组， 加上一行 ```wyzhcn\QiniuStorage\QiniuFilesystemServiceProvider```
  - ```config/filesystem.php``` 里面的 ```disks```数组加上：
  
 ```php
@@ -24,6 +24,7 @@
             'access_key'    => '',                          //AccessKey
             'secret_key' => '',                             //SecretKey
             'bucket' => '',                                 //Bucket名字
+            'secure' => true                                //使用https
         ],
     ],
     
@@ -75,7 +76,7 @@
 
 ```php
 
-    use itbdw\QiniuStorage\QiniuStorage;
+    use wyzhcn\QiniuStorage\QiniuStorage;
 
     $disk = QiniuStorage::disk('qiniu');
     $disk->exists('file.jpg');                      //文件是否存在
